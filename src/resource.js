@@ -1,6 +1,7 @@
 var res = {
     HealTexture_png : "res/Heal_texture.png",
     DotTexture_png : "res/Dot_texture.png",
+    particle_texture : "res/particle_texture.png",
     chara_princessselect_10 : "res/char/chara_princessselect_10.png",
     chara_princessselect_11 : "res/char/chara_princessselect_11.png",
     chara_princessselect_12 : "res/char/chara_princessselect_12.png",
