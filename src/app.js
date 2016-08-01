@@ -63,15 +63,6 @@ var gameLayer = cc.Layer.extend({
     //パーティクルの形と基本の色
     particle.setTexture(cc.Sprite.create(res.HealTexture_png).getTexture());
     this.addChild(particle, 10);
-
-    //プリセットのParticleFireを使ってみる　CPU負荷が大きいぞ！
-    var fireParticle = new cc.ParticleFire();
-    fireParticle.setPosition(size.width/2,size.height/4);
-    this.addChild(fireParticle,20);
-    fireParticle.setTexture(cc.Sprite.create(res.particle_texture).getTexture());
-    //パーティクルの寿命終了時にはレイヤーから削除
-    fireParticle.setAutoRemoveOnFinish(true);
-
   }
 
 });
@@ -95,15 +86,9 @@ var  charaLayer = cc.Layer.extend({
 
     var size = cc.director.getWinSize();
 
-    var sprite10 = cc.Sprite.create(res.chara_princessselect_10);
-    sprite10.setPosition(size.width / 5, size.height / 3);
-    sprite10.setScale(0.8);
-    this.addChild(sprite10, 0);
-    //キャラクターを追加
-    var sprite11 = cc.Sprite.create(res.chara_princessselect_11);
-    sprite11.setPosition(size.width / 2, size.height / 3);
-    sprite11.setScale(0.8);
-    this.addChild(sprite11, 0);
-
+    var sprite = cc.Sprite.create(res.chara_princessselect_10);
+    sprite.setPosition(size.width / 5, size.height / 3);
+    sprite.setScale(0.8);
+    this.addChild(sprite, 0);
   }
 });
