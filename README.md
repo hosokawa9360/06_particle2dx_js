@@ -1,4 +1,5 @@
 ##### 06_particle2dx_js  
+[https://hosokawa9360.github.io/06_particle2dx_js/](https://hosokawa9360.github.io/06_particle2dx_js/)
 
 ### particle2dx を使ってパーティクルを作成する演習
 
@@ -44,3 +45,17 @@ particle.setTexture(cc.Sprite.create(res.HealTexture_png).getTexture() );
 ```
 
 ### その２　背景とキャラクターを表示させる
+背景とキャラクターをパーティクルに組み合わせるといい感じになる
+
+
+### その３　プリセットのParticleFireを使用する
+CPU負荷が大きいので観察したら、コメントアウトか消すこと。
+```
+//プリセットのParticleFireを使ってみる　CPU負荷が大きいぞ！
+var fireParticle = new cc.ParticleFire();
+fireParticle.setPosition(size.width/2,size.height/4);
+this.addChild(fireParticle,20);
+//  fireParticle.setTexture(cc.Sprite.create(res.particle_texture).getTexture());
+//パーティクルの寿命終了時にはレイヤーから削除
+fireParticle.setAutoRemoveOnFinish(true);
+```
