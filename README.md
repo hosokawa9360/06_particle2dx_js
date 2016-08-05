@@ -55,7 +55,50 @@ CPU負荷が大きいので観察したら、コメントアウトか消すこ�
 var fireParticle = new cc.ParticleFire();
 fireParticle.setPosition(size.width/2,size.height/4);
 this.addChild(fireParticle,20);
-//  fireParticle.setTexture(cc.Sprite.create(res.particle_texture).getTexture());
+//  fireParticle.setTexture(cc.Sprite.create(res.DotTexture_png).getTexture());
 //パーティクルの寿命終了時にはレイヤーから削除
 fireParticle.setAutoRemoveOnFinish(true);
 ```
+
+### その4　プリセットのParticleFireに設定を追加する
+```
+//プリセットのParticleFireを使ってみる　CPU負荷が大きいぞ！
+var fireParticle = new cc.ParticleFire();
+fireParticle.setPosition(size.width/2,size.height/4);
+this.addChild(fireParticle,20);
+fireParticle.setTexture(cc.Sprite.create(res.DotTexture_png).getTexture());
+//１秒間に放出するパーティクルの数
+fireParticle.setEmissionRate(0.3);
+//パーティクルの出力方向の分散度
+fireParticle.setAngleVar(30);
+//パーティクルが消えるまでの時間
+fireParticle.setLife(2);
+//パーティクルの寿命終了時にはレイヤーから削除
+fireParticle.setAutoRemoveOnFinish(true);
+```
+### その６　Particle2dxの背景用にスクリーンショットを作成する
+Particle2dxの背景用に火、水、木属性のキャラクターと
+敵キャラクターを配置する。  
+
+配置し終えたら、画面表示させ、スクリーンショットを保存する。(PNG画像)  
+Particle2dx用にスクリーンショットを加工。  
+Particle2dxで画面サイズを1200×600のサイズにする。  
+画面サイズの並びの「background」をクリックすると、背景用のカラーパレットとαブレンドのスライダー、背景用の画像のアップロード領域が表示されます。  
+「background DropPNG」と表示された枠内に、上記のスクリーンショットをドラッグ＆ドロップでアップロードして背景に設置する。  
+
+  
+### その６　Particle2dxで火属性のパーティクルを作成する
+
+Ｍｏｄｅ：Ｇｒａｖｉｔｙ  
+* Motion   
+    * Angle  0 1  
+    * GravityXY 1580 0  
+* Color&Shape  
+    * Start Size 12 0  
+    * End Seze 40 0   
+    * Start Red 1 0
+    * End Red 1 0
+    * Start Green 0.2 0
+    * End Green 0.4 0
+    * Start Blue 0.2 0.2
+    * End Blue 0.8 0   
