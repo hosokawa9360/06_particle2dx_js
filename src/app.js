@@ -21,6 +21,7 @@ var gameLayer = cc.Layer.extend({
     return true;
   },
   update: function(_dt) {
+/*
     var particle = new cc.ParticleSystem.create(100);
     //重力をシミュレーションしたパーティクル
     particle.setEmitterMode(cc.ParticleSystem.MODE_GRAVITY);
@@ -63,6 +64,22 @@ var gameLayer = cc.Layer.extend({
     //パーティクルの形と基本の色
     particle.setTexture(cc.Sprite.create(res.HealTexture_png).getTexture());
     this.addChild(particle, 10);
+*/
+    //プリセットのParticleFireを使ってみる　CPU負荷が大きいぞ！
+/*
+    var fireParticle = new cc.ParticleFire();
+    fireParticle.setPosition(size.width/2,size.height/4);
+    this.addChild(fireParticle,20);
+    fireParticle.setTexture(cc.Sprite.create(res.DotTexture_png).getTexture());
+   //１秒間に放出するパーティクルの数
+    fireParticle.setEmissionRate(0.3);
+    //パーティクルの出力方向の分散度
+    fireParticle.setAngleVar(30);
+    //パーティクルが消えるまでの時間
+    fireParticle.setLife(2);
+    //パーティクルの寿命終了時にはレイヤーから削除
+    fireParticle.setAutoRemoveOnFinish(true);
+*/
   }
 
 });
@@ -86,9 +103,38 @@ var  charaLayer = cc.Layer.extend({
 
     var size = cc.director.getWinSize();
 
-    var sprite = cc.Sprite.create(res.chara_princessselect_10);
-    sprite.setPosition(size.width / 5, size.height / 3);
-    sprite.setScale(0.8);
-    this.addChild(sprite, 0);
+    //水キャラクターを追加
+    var sprite11 = cc.Sprite.create(res.chara_princessselect_11);
+    sprite11.setPosition(size.width *0.25, size.height * 0.4);
+    sprite11.setScale(0.8);
+    this.addChild(sprite11, 0);
+
+   //火属性のキャラクター
+    var sprite10 = cc.Sprite.create(res.chara_princessselect_10);
+    sprite10.setPosition(size.width *0.3, size.height *0.3);
+    sprite10.setScale(0.8);
+    this.addChild(sprite10, 0);
+
+    //木属性キャラクター
+    var sprite12 = cc.Sprite.create(res.chara_princessselect_12);
+    sprite12.setPosition(size.width *0.15, size.height *0.25);
+    sprite12.setScale(0.8);
+    this.addChild(sprite12, 0);
+
+    //火属性　敵ｻｺキャラクター
+    var sprite1 = cc.Sprite.create(res.chara_enemy_1);
+    sprite1.setPosition(size.width *0.65, size.height *0.45);
+    sprite1.setScale(1.2);
+    this.addChild(sprite1, 0);
+    //水属性　敵ｻｺキャラクター
+    var sprite2 = cc.Sprite.create(res.chara_enemy_2);
+    sprite2.setPosition(size.width *0.70, size.height *0.35);
+    sprite2.setScale(1.2);
+    this.addChild(sprite2, 0);
+    //火属性　敵ｻｺ中ボスキャラクター
+    var sprite4 = cc.Sprite.create(res.chara_enemy_4);
+    sprite4.setPosition(size.width *0.85, size.height *0.40);
+    sprite4.setScale(1.2);
+    this.addChild(sprite4, 0);
   }
 });
