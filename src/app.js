@@ -115,13 +115,18 @@ var particleLayer = cc.Layer.extend({
     if ((this.skillCnt % 80) == 0) {
       this.skillCnt = 0;
       this.skillLevel++;
-      this.skillLevel = this.skillLevel  % 5;
+      //HealとSlipスキル追加
+      if(this.skillSelect<3) {
+        this.skillLevel = this.skillLevel  % 5;
+      } else {
+        this.skillLevel = this.skillLevel  % 2;
+      }
 
       this.removeAllChildren();
       if (this.skillLevel == 0) {
         this.skillLevel++;
         this.skillSelect++;
-        this.skillSelect = this.skillSelect % 3;
+        this.skillSelect = this.skillSelect % 5;
       }
 
     }
@@ -138,8 +143,8 @@ var particleLayer = cc.Layer.extend({
   skillParticle: function(attrib, rare, x, y) {
 
     //debugText.setString("attrib:"+attrib);
-
-    var skillName = ["Fire", "Water", "Wood"];
+  　　//HealとSlipスキル追加
+    var skillName = ["Fire", "Water", "Wood","Heal","Slip"];
     var sName = "res." + skillName[attrib] + "Texture" + rare + "_plist";
 
     debugText.setString(sName);
