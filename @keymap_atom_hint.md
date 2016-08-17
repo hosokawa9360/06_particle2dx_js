@@ -3,7 +3,6 @@
 ★最初の行に移動	Ctrl + Home	 
 ★最後の行に移動	Ctrl + End
 ★行をコメントアウト	Ctrl + /
-
 ★行を削除　 Shift + delete
 
 ★行を直下に複写	Ctrl + Shift + d
