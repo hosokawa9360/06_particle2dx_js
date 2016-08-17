@@ -5,9 +5,11 @@ var gameScene = cc.Scene.extend({
     var layer0 = new fieldLayer();
     var layer1 = new gameLayer();
     var layer2 = new charaLayer();
+    var layer3 = new particleLayer();
     this.addChild(layer0);
     this.addChild(layer1);
     this.addChild(layer2);
+    this.addChild(layer3);
 
   }
 });
@@ -137,4 +139,30 @@ var  charaLayer = cc.Layer.extend({
     sprite4.setScale(1.2);
     this.addChild(sprite4, 0);
   }
+});
+
+//パーティクル用のレイヤー
+var  particleLayer = cc.Layer.extend({
+  effectCount:0,
+   ctor: function() {
+    this._super();
+    size = cc.winSize;
+    this.scheduleUpdate();
+    return true;
+  },
+  update: function(_dt) {
+    //600フレームに1回パーティクルを描画する
+    if((this.effectCount % 600)==0){
+      var i = 0;
+      //パーティクルの読み込み
+       var fireParticle = new cc.ParticleSystem( eval("res.FireTexture" + i + "_plist") );
+       fireParticle.setPosition(350,100+(i*100));
+       this.addChild(fireParticle,20);
+       //パーティクルの寿命が尽きたら、自動的にオブジェクトを削除する
+       fireParticle.setAutoRemoveOnFinish(true);
+    }
+    //フレームをカウントする
+    this.effectCount++;
+  }
+
 });
