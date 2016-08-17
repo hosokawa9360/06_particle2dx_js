@@ -107,9 +107,9 @@ var particleLayer = cc.Layer.extend({
       + " skillLevel:"+this.skillLevel
     );
 
-     this.skillParticle(this.skillSelect, this.skillLevel, 350, 100);
+    // this.skillParticle(this.skillSelect, this.skillLevel, 350, 100);
      //debug
-     //this.skillParticle(2,4, 350, 100);
+    this.skillParticle(4,1, 350, 100);
 
     }
     if ((this.skillCnt % 80) == 0) {

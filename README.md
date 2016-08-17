@@ -55,3 +55,10 @@ filenameにはﾌｧｲﾙ名を入力する　（例：Fire_Attack1.plist)
 今回は、１.の形式でダウンロードする。  
 １．の形式では、パーティクルのパラメータとＰＮＧを別々に管理しなくて済む。  
 ２．の形式てでは、画像を差し替えて、同じパラメータを使うといったような用途では便利。  
+
+
+### その7　水の属性、木の属性スキルを実装する #5
+https://github.com/hosokawa9360/06_particle2dx_js/issues/5
+
+### その8　HealとSlipスキル追加 #6
+https://github.com/hosokawa9360/06_particle2dx_js/issues/6
