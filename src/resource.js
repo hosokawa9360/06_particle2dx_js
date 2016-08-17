@@ -16,6 +16,9 @@ var res = {
     chara_enemy_6 : "res/char/chara_enemy_6.png",
 		 FireTexture0_plist : "res/effect/Fire_texture0.plist",
 		 FireTexture1_plist : "res/effect/Fire_texture1.plist",
+		 FireTexture2_plist : "res/effect/Fire_texture2.plist",
+		 FireTexture3_plist : "res/effect/Fire_texture3.plist",
+		 FireTexture4_plist : "res/effect/Fire_texture4.plist",
 
 };
 

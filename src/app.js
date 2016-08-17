@@ -156,12 +156,15 @@ var  particleLayer = cc.Layer.extend({
       //スキルレベル１
       var i = 1;
       //パーティクルの読み込み
+      for(i=1; i<=4 ; i++) {
        var fireParticle = new cc.ParticleSystem( eval("res.FireTexture" + i + "_plist") );
-       fireParticle.setPosition(350,150);
-       //fireParticle.setPosition(350,100+(i*100));
+       //fireParticle.setPosition(350,150);
+       fireParticle.setPosition(350,(i*75));
        this.addChild(fireParticle,20);
        //パーティクルの寿命が尽きたら、自動的にオブジェクトを削除する
        fireParticle.setAutoRemoveOnFinish(true);
+     }
+
     }
     //フレームをカウントする
     this.effectCount++;
