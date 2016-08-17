@@ -89,6 +89,10 @@ Particle2dxで画面サイズを1200×600のサイズにする。
   
 ### その６　Particle2dxで火属性のパーティクルを作成する
 
+https://github.com/hosokawa9360/06_particle2dx_js/issues/1
+
+https://github.com/hosokawa9360/06_particle2dx_js/#1
+
 Ｍｏｄｅ：Ｇｒａｖｉｔｙ  
 * Motion   
     * Angle  0 1  
