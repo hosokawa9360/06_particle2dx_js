@@ -151,12 +151,14 @@ var  particleLayer = cc.Layer.extend({
     return true;
   },
   update: function(_dt) {
-    //600フレームに1回パーティクルを描画する
-    if((this.effectCount % 600)==0){
-      var i = 0;
+    //60フレームに1回パーティクルを描画する
+    if((this.effectCount % 60)==0){
+      //スキルレベル１
+      var i = 1;
       //パーティクルの読み込み
        var fireParticle = new cc.ParticleSystem( eval("res.FireTexture" + i + "_plist") );
-       fireParticle.setPosition(350,100+(i*100));
+       fireParticle.setPosition(350,150);
+       //fireParticle.setPosition(350,100+(i*100));
        this.addChild(fireParticle,20);
        //パーティクルの寿命が尽きたら、自動的にオブジェクトを削除する
        fireParticle.setAutoRemoveOnFinish(true);

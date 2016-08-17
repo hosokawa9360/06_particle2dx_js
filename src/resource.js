@@ -14,7 +14,9 @@ var res = {
     chara_enemy_4 : "res/char/chara_enemy_4.png",
     chara_enemy_5 : "res/char/chara_enemy_5.png",
     chara_enemy_6 : "res/char/chara_enemy_6.png",
-		 FireTexture0_plist : "res/effect/Fire_texture0.plist"
+		 FireTexture0_plist : "res/effect/Fire_texture0.plist",
+		 FireTexture1_plist : "res/effect/Fire_texture1.plist",
+
 };
 
 var g_resources = [];
